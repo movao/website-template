@@ -1,0 +1,372 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ═══════════════════════════════════════════════════════════
+   DESIGN SYSTEM
+
+   Typoskala (8 Stufen):
+   base(16) → body-lg(17) → subtitle(20) → xl(22) → hero-sub(23) → logo(28) → title(32) → display(52)
+
+   Spacing-System (basierend auf 8px-Raster, Baseline 24px):
+     8px  (mb-2)  — Eng verbunden: Titel → Subline, Titel → Beschreibung
+    16px  (mb-4)  — Innerhalb einer Gruppe: Icon → Titel, Label → Input
+    24px  (mt-6)  — Standard-Abstand: Heading → Subline, Badge → Heading
+    32px  (gap-8) — Zwischen Items: Grid-Karten, Card-Gaps
+    40px  (mb-10) — Zwischen Gruppen: Section-Header → Content
+    48px  (gap-12) — Zwischen Blöcken: Split-Spalten
+    64px  (gap-16) — Zwischen Major-Blöcken: Split mit Bild
+    96px  (space-y-24) — Große Trennung: Alternating Rows
+
+   Line-Heights (je größer die Schrift, desto enger):
+    display  52px → 1.10 (57px)
+    title    32px → 1.20 (38px)
+    logo     28px → 1.40 (39px)
+    xl       24px → 1.50 (36px)
+    hero-sub 23px → 1.35 (31px)
+    subtitle 20px → 1.20 (24px)
+    body-lg  17px → 1.50 (26px)
+    base     16px → 1.50 (24px)
+
+   Rollen-Zuweisung:
+    display  → Hero-Headlines (h1), Stat-Zahlenwerte
+    title    → Section-Headings (h2), CTA-Headlines
+    logo     → Logo-Text (Navigation, Footer)
+    xl       → Testimonial-Quotes
+    hero-sub → Hero-Sublines
+    subtitle → Section-Subheadings, Card-Titel, CTA-Beschreibungen
+    body-lg  → Lead-Absätze (About), Footer-Überschriften
+    base     → Card-Beschreibungen, Nav/Footer-Links, Badges, Labels
+
+   Regeln:
+   1. Body-Text nie unter 16px
+   2. Buttons/Inputs mindestens 48px Höhe
+   3. Section-Padding mindestens 64px
+   4. Headlines mindestens 2.5× Body (40px+)
+   5. Zeilenlänge 45-75 Zeichen (max-w-2xl bis max-w-3xl)
+   6. Maximal 3 Hierarchie-Stufen pro Bildschirmausschnitt
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── Tailwind v4: Theme-Tokens ────────────────────────── */
+
+@theme {
+  /* Farben — Fallbacks, apply-theme.ts überschreibt zur Laufzeit */
+  --color-background: #ffffff;
+  --color-foreground: #09090b;
+  --color-primary: #2563eb;
+  --color-accent: #f59e0b;
+  --color-muted: #f4f4f5;
+  --color-muted-foreground: #71717a;
+  --color-card: #ffffff;
+  --color-border: #e4e4e7;
+  --color-input: #f4f4f5;
+  --color-ring: #2563eb;
+  --color-destructive: #ef4444;
+  --color-success: #22c55e;
+
+  /* Fonts — Fallbacks (werden von apply-theme.ts überschrieben) */
+  --font-heading: sans-serif;
+  --font-body: sans-serif;
+
+  /* Border-Radius — skaliert von --radius (gesetzt durch apply-theme.ts) */
+  --radius-DEFAULT: var(--radius);
+  --radius-sm: calc(var(--radius) * 0.5);
+  --radius-md: calc(var(--radius) * 0.75);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.5);
+  --radius-2xl: calc(var(--radius) * 2);
+
+  /* ─── Typoskala (8 Stufen) ────────────────────────────────
+     base:      16px  → lh 1.50 (24px)
+     body-lg:   17px  → lh 1.50 (26px)
+     subtitle:  20px  → lh 1.20 (24px)
+     hero-sub:  23px  → lh 1.35 (31px)
+     xl:        22px  → lh 1.50 (33px)
+     logo:      28px  → lh 1.40 (39px)
+     title:     32px  → lh 1.20 (38px)
+     display:   52px  → lh 1.10 (57px)
+     ─────────────────────────────────────────────────────── */
+  --text-display: clamp(1.625rem, 4.5vw, 3.25rem);
+  --text-display--line-height: 1.1;
+  --text-title: clamp(1.375rem, 3.2vw, 2rem);
+  --text-title--line-height: 1.2;
+  --text-logo: clamp(1.25rem, 2.5vw, 1.75rem);
+  --text-logo--line-height: 1.4;
+  --text-xl: clamp(1.125rem, 1.6vw, 1.375rem);
+  --text-xl--line-height: 1.5;
+  --text-hero-sub: clamp(1.125rem, 1.7vw, 1.425rem);
+  --text-hero-sub--line-height: 1.35;
+  --text-subtitle: clamp(1.063rem, 1.5vw, 1.25rem);
+  --text-subtitle--line-height: 1.2;
+  --text-body-lg: clamp(1rem, 1.2vw, 1.063rem);
+  --text-body-lg--line-height: 1.5;
+
+  /* Gap & Max-Width */
+  --gap-section: var(--spacing-gap);
+  --max-width-container: var(--container-max-width);
+}
+
+/* ─── Base Layer ────────────────────────────────────────── */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    overflow-x: clip;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+
+  body {
+    font-family: var(--font-body);
+    font-weight: var(--font-body-weight);
+    font-size: 1rem;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @apply bg-background text-foreground;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: var(--font-heading-weight);
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-primary) 20%, transparent);
+    color: var(--color-foreground);
+  }
+
+  * {
+    @apply border-border outline-ring/50;
+  }
+}
+
+/* ─── Component Layer ──────────────────────────────────── */
+
+@layer components {
+  /* Buttons — mindestens 48px Höhe */
+  .btn-primary {
+    @apply inline-flex items-center justify-center
+           px-8 font-medium text-base
+           transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-offset-2;
+    min-height: 48px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    border-radius: var(--radius);
+    --tw-ring-color: var(--color-ring);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-accent);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center
+           px-8 font-medium text-base
+           transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-offset-2;
+    min-height: 48px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    border-radius: var(--radius);
+    --tw-ring-color: var(--color-ring);
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--color-muted);
+  }
+
+  /* Section-Wrapper — Padding aus Spacing-Preset (apply-theme.ts) */
+  .section {
+    padding-top: clamp(3rem, 6vw, var(--spacing-section));
+    padding-bottom: clamp(3rem, 6vw, var(--spacing-section));
+  }
+
+  .section-alt {
+    padding-top: clamp(3rem, 6vw, var(--spacing-section));
+    padding-bottom: clamp(3rem, 6vw, var(--spacing-section));
+    background-color: var(--color-muted);
+  }
+
+  .container-narrow {
+    max-width: var(--container-max-width);
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* ─── Section-Titel ──────────────────────────────────────
+     Heading → Subheading: 8px (mb-2)
+     Heading-Block → Content: 40px (mb-10)
+     ──────────────────────────────────────────────────────── */
+  .section-heading {
+    @apply text-title mb-2;
+    font-family: var(--font-heading);
+    color: var(--color-foreground);
+  }
+
+  .section-subheading {
+    @apply text-subtitle max-w-2xl;
+    color: var(--color-muted-foreground);
+  }
+
+  .section-header {
+    @apply text-center mb-10;
+  }
+
+  /* ─── Karten-Elemente ────────────────────────────────────
+     Zentrale Klassen für wiederkehrende Karten-Muster.
+     Änderung hier wirkt auf alle Sections gleichzeitig.
+     ──────────────────────────────────────────────────────── */
+  .card-title {
+    @apply text-subtitle;
+    font-family: var(--font-heading);
+    color: var(--color-foreground);
+  }
+
+  .card-description {
+    @apply text-base leading-relaxed;
+    color: var(--color-muted-foreground);
+  }
+
+  /* ─── Wiederkehrende Elemente ─────────────────────────── */
+  .badge-pill {
+    @apply inline-flex items-center px-4 py-1.5 rounded-full border border-border bg-muted text-base text-muted-foreground;
+  }
+
+
+  .form-label {
+    @apply block text-base font-medium text-foreground mb-2;
+  }
+
+}
+
+/* ─── Overlay-Kontext ──────────────────────────────────────
+   Für Sections mit dunklem Bild-Overlay.
+   Außerhalb von @layer components weil html[data-theme-dark]
+   Selektoren von Tailwind v4 innerhalb von @layer verworfen werden.
+   ──────────────────────────────────────────────────────────── */
+.overlay-bg {
+  background-color: color-mix(in srgb, var(--color-foreground) 60%, transparent);
+}
+html[data-theme-dark="true"] .overlay-bg {
+  background-color: color-mix(in srgb, var(--color-background) 60%, transparent);
+}
+
+.overlay-text {
+  color: var(--color-background);
+}
+html[data-theme-dark="true"] .overlay-text {
+  color: var(--color-foreground);
+}
+
+.overlay-text-muted {
+  color: var(--color-background);
+  opacity: 0.8;
+}
+html[data-theme-dark="true"] .overlay-text-muted {
+  color: var(--color-foreground);
+  opacity: 0.8;
+}
+
+.overlay-badge {
+  border-color: color-mix(in srgb, var(--color-background) 20%, transparent);
+  background-color: color-mix(in srgb, var(--color-background) 10%, transparent);
+  color: var(--color-background);
+}
+html[data-theme-dark="true"] .overlay-badge {
+  border-color: color-mix(in srgb, var(--color-foreground) 20%, transparent);
+  background-color: color-mix(in srgb, var(--color-foreground) 10%, transparent);
+  color: var(--color-foreground);
+}
+
+.overlay-gradient {
+  background: linear-gradient(to right, color-mix(in srgb, var(--color-foreground) 70%, transparent), transparent 60%);
+}
+html[data-theme-dark="true"] .overlay-gradient {
+  background: linear-gradient(to right, color-mix(in srgb, var(--color-background) 70%, transparent), transparent 60%);
+}
+
+.overlay-gradient-bottom {
+  background: linear-gradient(to top, color-mix(in srgb, var(--color-foreground) 70%, transparent), transparent 60%);
+}
+html[data-theme-dark="true"] .overlay-gradient-bottom {
+  background: linear-gradient(to top, color-mix(in srgb, var(--color-background) 70%, transparent), transparent 60%);
+}
+
+/* ─── Animations ───────────────────────────────────────── */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+.animate-delay-1 { animation-delay: 0.1s; }
+.animate-delay-2 { animation-delay: 0.2s; }
+.animate-delay-3 { animation-delay: 0.3s; }
+.animate-delay-4 { animation-delay: 0.4s; }
+
+/* ─── Scroll-Reveal (Intersection Observer) ────────────── */
+
+[data-animate] {
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+[data-animate="fade-up"] {
+  transform: translateY(1.5rem);
+}
+
+[data-animate="fade-in"] {
+  transform: none;
+}
+
+[data-animate="scale-in"] {
+  transform: scale(0.95);
+}
+
+[data-animate].is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ─── Barrierefreiheit ─────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  [data-animate] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

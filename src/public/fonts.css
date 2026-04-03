@@ -1,0 +1,336 @@
+/* ============================================
+   FONTSHARE FONTS — Selbst gehostet (DSGVO-konform)
+
+   Alle Fonts von https://www.fontshare.com/
+   Kostenlos für kommerziellen Einsatz.
+   Kein externer Request, keine Cookies, kein Tracking.
+
+   Um die WOFF2-Dateien zu beschaffen:
+   1. Besuche https://www.fontshare.com/fonts/[font-name]
+   2. Klicke "Download" → ZIP enthält WOFF2
+   3. Lege die .woff2 Dateien in public/fonts/[font-name]/
+   ============================================ */
+
+/* ─── Clash Display (Pairing A: Signature) ──────────── */
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/fonts/clash-display/ClashDisplay-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/fonts/clash-display/ClashDisplay-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Satoshi (Pairing A: Signature) ────────────────── */
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/satoshi/Satoshi-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/satoshi/Satoshi-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Cabinet Grotesk (Pairing B: Structure + C: Heritage Body) ─ */
+
+@font-face {
+  font-family: 'Cabinet Grotesk';
+  src: url('/fonts/cabinet-grotesk/CabinetGrotesk-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cabinet Grotesk';
+  src: url('/fonts/cabinet-grotesk/CabinetGrotesk-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cabinet Grotesk';
+  src: url('/fonts/cabinet-grotesk/CabinetGrotesk-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cabinet Grotesk';
+  src: url('/fonts/cabinet-grotesk/CabinetGrotesk-Extrabold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── General Sans (Pairing B + D Body) ─────────────── */
+
+@font-face {
+  font-family: 'General Sans';
+  src: url('/fonts/general-sans/GeneralSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'General Sans';
+  src: url('/fonts/general-sans/GeneralSans-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Gambarino (Pairing C: Heritage Heading) ───────── */
+
+@font-face {
+  font-family: 'Gambarino';
+  src: url('/fonts/gambarino/Gambarino-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Tanker (Pairing D: Statement Heading) ─────────── */
+
+@font-face {
+  font-family: 'Tanker';
+  src: url('/fonts/tanker/Tanker-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Erode (Pairing E: Warmth Heading) ─────────────── */
+
+@font-face {
+  font-family: 'Erode';
+  src: url('/fonts/erode/Erode-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Erode';
+  src: url('/fonts/erode/Erode-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Supreme (Pairing E: Warmth Body) ──────────────── */
+
+@font-face {
+  font-family: 'Supreme';
+  src: url('/fonts/supreme/Supreme-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Supreme';
+  src: url('/fonts/supreme/Supreme-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Zodiak (Pairings: craft, editorial) ──────────── */
+
+@font-face {
+  font-family: 'Zodiak';
+  src: url('/fonts/zodiak/Zodiak-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zodiak';
+  src: url('/fonts/zodiak/Zodiak-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zodiak';
+  src: url('/fonts/zodiak/Zodiak-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Switzer (Pairings: craft, clarity, contrast) ─── */
+
+@font-face {
+  font-family: 'Switzer';
+  src: url('/fonts/switzer/Switzer-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Switzer';
+  src: url('/fonts/switzer/Switzer-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Switzer';
+  src: url('/fonts/switzer/Switzer-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Switzer';
+  src: url('/fonts/switzer/Switzer-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Boska (Pairing: contrast) ────────────────────── */
+
+@font-face {
+  font-family: 'Boska';
+  src: url('/fonts/boska/Boska-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Boska';
+  src: url('/fonts/boska/Boska-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Boska';
+  src: url('/fonts/boska/Boska-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Panchang (Pairing: bold) ─────────────────────── */
+
+@font-face {
+  font-family: 'Panchang';
+  src: url('/fonts/panchang/Panchang-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Panchang';
+  src: url('/fonts/panchang/Panchang-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Panchang';
+  src: url('/fonts/panchang/Panchang-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Panchang';
+  src: url('/fonts/panchang/Panchang-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Sentient (Pairing: refined) ──────────────────── */
+
+@font-face {
+  font-family: 'Sentient';
+  src: url('/fonts/sentient/Sentient-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sentient';
+  src: url('/fonts/sentient/Sentient-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sentient';
+  src: url('/fonts/sentient/Sentient-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Clash Grotesk (Pairing: minimal) ─────────────── */
+
+@font-face {
+  font-family: 'Clash Grotesk';
+  src: url('/fonts/clash-grotesk/ClashGrotesk-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clash Grotesk';
+  src: url('/fonts/clash-grotesk/ClashGrotesk-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clash Grotesk';
+  src: url('/fonts/clash-grotesk/ClashGrotesk-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clash Grotesk';
+  src: url('/fonts/clash-grotesk/ClashGrotesk-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
