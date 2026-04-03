@@ -235,30 +235,6 @@
     color: var(--color-muted-foreground);
   }
 
-  /* ─── Card-Style (gesteuert via design.cardStyle) ───────
-     Sections nutzen .card-base als Basis-Klasse für Cards.
-     Der aktive Stil wird über data-card-style auf <html> gesetzt.
-     Default (subtle): bg-card + border-border
-     primary: leichter Primärfarbton als Hintergrund
-     accent: leichter Akzentfarbton als Hintergrund
-     ──────────────────────────────────────────────────────── */
-  .card-base {
-    @apply rounded-2xl border transition-all duration-300;
-    background-color: var(--color-card);
-    border-color: var(--color-border);
-  }
-  .card-base:hover {
-    @apply shadow-lg;
-  }
-  html[data-card-style="primary"] .card-base {
-    background-color: color-mix(in srgb, var(--color-primary) 5%, var(--color-background));
-    border-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
-  }
-  html[data-card-style="accent"] .card-base {
-    background-color: color-mix(in srgb, var(--color-accent) 5%, var(--color-background));
-    border-color: color-mix(in srgb, var(--color-accent) 10%, transparent);
-  }
-
   /* ─── Wiederkehrende Elemente ─────────────────────────── */
   .badge-pill {
     @apply inline-flex items-center px-4 py-1.5 rounded-full border border-border bg-muted text-base text-muted-foreground;
