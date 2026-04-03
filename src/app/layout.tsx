@@ -36,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang={siteConfig.language} data-theme-dark={String(isDarkTheme(design))}>
+    <html lang={siteConfig.language} data-theme-dark={String(isDarkTheme(design))} data-card-style={design.cardStyle || 'subtle'}>
       <head>
         <style dangerouslySetInnerHTML={{ __html: themeCSS }} />
         {/* Fonts werden dynamisch über generateThemeCSS geladen — nur aktive Fonts */}
