@@ -1,6 +1,46 @@
-# Refinements — Verfeinerungen pro Kundenwebsite
+# Refinements — Gestaltungsmöglichkeiten
 
-Diese Datei dokumentiert Design-Anpassungen die Claude beim Bauen einer Kundenwebsite anwenden kann. Keine Template-Änderungen nötig — alles über className-Ergänzungen, CSS-Variablen oder zusätzliche Elemente in page.tsx.
+Diese Datei ist ein Ideenkatalog. Lies beim Konzipieren NUR diese Zusammenfassung. Wenn du eine konkrete Section baust, lies den relevanten Abschnitt unten.
+
+## Überblick — was ist möglich?
+
+**Typografie** — Display-Schrift vergrößern, Letter-Spacing anpassen, Font-Weight variieren. Kann den gesamten Charakter der Seite verändern.
+
+**Hero** — Hintergrundbilder mit Overlays, Parallax, Video-Hintergründe, Floating-Karten zwischen Sections, Social Proof, Trust-Elemente, Formulare im Hero, animierte Texte, Gradient-Hintergründe. Heros können auch als CTA-Sections eingesetzt werden.
+
+**Layout** — Breitere Container, Fullwidth-Sections, asymmetrische Grids, Bilder die bis zum Rand gehen.
+
+**Features/Services** — Horizontale Karten, nummerierte Features, Bento-Grids, erweiterbare Details, Tabs, Akkordeon, Video statt Bild, Checklisten.
+
+**Karten** — Glassmorphism, ohne Border, mit Bildern, Split-Headers, Hover-Effekte.
+
+**Farben** — Gradient-Akzente, eingefärbte Hintergründe, farbige Borders.
+
+**CTA** — Hintergrundbilder, Gradients, Muster, Countdown, eingebettete Formulare, Testimonials, Social Proof.
+
+**Testimonials** — Porträtbilder, Video-Testimonials, Masonry, Carousel-Variationen, Bewertungsquellen.
+
+**Animationen** — Stagger-Delays, Slide-In, Parallax auf Elementen, Scroll-Counter.
+
+**Navigation** — Transparenter Header, zentrierte Variante, MegaMenu, TopBar/Announcement-Bar, kompakte Navigation beim Scrollen.
+
+**Footer** — Vier Varianten (Standard, Minimal, Extended, Centered), Newsletter-Integration, verschiedene Hintergründe.
+
+**Team** — Social-Links, größere Fotos, verschiedene Raster, Abteilungs-Gruppierung, Highlight-Mitglied.
+
+**Stats** — Animierte Counter, farbige Kacheln, Fortschrittsbalken, Kreisdiagramme, Trend-Indikatoren.
+
+**Process** — Timeline, klickbare Steps, Zickzack-Layout, Prozess als Tabs, mit Bildern.
+
+**Kontakt** — Floating Labels, Inline-Validierung, Fullwidth-Karte mit Overlay, verschiedene Layouts.
+
+**Visuelle Effekte** — Grain-Textur, Duotone-Bilder, Bild-Masken, Text-Highlights, dekorative Unterstreichungen.
+
+**Content-Muster** — Vergleichstabellen, Before/After-Slider, Video-Sections, Countdown-Timer, Multi-Step-Formulare.
+
+---
+
+*Details zu jeder Kategorie stehen in den Abschnitten unten. Lies sie gezielt wenn du eine konkrete Section baust.*
 
 ---
 
