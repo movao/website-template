@@ -1,37 +1,18 @@
-# Template Usage Guide — Für Claude beim Bauen von Kundenwebsites
+# Template Usage Guide
 
-## Wichtiger Hinweis
-
-Wenn beim Verfeinern einer Kundenwebsite auffällt dass eine Anpassung **besser als Template-Feature** (neue Variante oder neuer Prop) funktionieren würde statt als einmalige Verfeinerung — dies dem Entwickler melden. Nicht selbst ins Template einbauen, aber dokumentieren was fehlt und warum es systemweit sinnvoller wäre.
+Referenz für Section-Varianten, Props und Konfiguration. Nutze dies als Werkzeugkatalog — nicht als Anleitung wie du designen sollst.
 
 ---
 
-## Design-Entscheidungen
+## Designprinzipien (Referenz)
 
-### Die Seite als Ganzes denken
+Diese Prinzipien sind keine Vorschriften. Nutze sie als Prüfsteine für dein eigenes Konzept.
 
-Eine Website ist keine Aneinanderreihung von Sections. Sie ist eine Komposition — wie ein Magazin-Layout mit Rhythmus, Spannung und Ruhepunkten. Bevor einzelne Sections gewählt werden, zuerst die Gesamtwirkung definieren:
-
-**1. Charakter der Marke verstehen**
-Ist die Marke laut oder leise? Modern oder traditionell? Verspielt oder seriös? Der Charakter bestimmt ALLES — Farbwelt, Font-Pairing, Layout-Dichte, Effekte. Eine Praxis braucht Ruhe (terra, warmth, breathe Spacing). Ein Tech-Startup braucht Energie (graphite, bold, dense Spacing).
-
-**2. Visuelle Hierarchie planen**
-Was soll der Besucher zuerst sehen? Was als zweites? Die Seite braucht einen klaren Lesefluss: Hero → Kernaussage → Vertrauensaufbau → Handlungsaufforderung. Jede Section hat eine Aufgabe in dieser Kette.
-
-**3. Kontrast zwischen Sections schaffen**
-Abwechslung entsteht durch Kontrast: nach einem dichten Grid ein luftiges Split-Layout. Nach einer farbigen CTA-Section eine ruhige weiße Section. Nach zentriertem Text ein linksbündiges Layout. Ohne Kontrast wirkt die Seite monoton.
-
-### Designprinzipien
-
-**Weißraum ist ein Gestaltungselement** — Leerer Raum gibt den Inhalten Bedeutung. Nicht jede Fläche füllen. Ein HeroMinimal mit viel Luft kann stärker wirken als ein überladener Hero mit Bild, Badge, zwei Buttons und Social Proof.
-
-**Visuelle Hierarchie durch Größe und Gewicht** — Das Wichtigste ist das Größte. Headline > Subheading > Body > Meta. Wenn alles gleich groß ist, ist nichts wichtig.
-
-**Blickführung** — Der Blick des Besuchers folgt einem Pfad: oben links → Headline → Subline → CTA. Sections die diesen Fluss unterstützen (linksbündig, klare Leserichtung) funktionieren besser als zentrierte Walls-of-Text.
-
-**Konsistenz innerhalb einer Seite** — Wenn die erste Karte runde Ecken hat, haben alle Karten runde Ecken. Wenn Icons im Ring-Stil sind, sind ALLE Icons im Ring-Stil. Inkonsistenz wirkt unprofessionell.
-
-**Zurückhaltung bei Effekten** — Parallax, Carousel, Gradient-Text, Animationen sind Gewürze, nicht die Hauptzutat. Sie fallen auf WEIL der Rest ruhig ist. Wenn alles animiert ist, fällt nichts mehr auf.
+- **Weißraum** — Leerer Raum gibt Inhalten Bedeutung. Weniger kann stärker wirken.
+- **Hierarchie** — Das Wichtigste ist das Größte. Headline > Subheading > Body > Meta.
+- **Kontrast** — Abwechslung zwischen dichten und luftigen, farbigen und neutralen Sections.
+- **Konsistenz** — Runde Ecken überall oder nirgends. Ring-Icons überall oder nirgends.
+- **Zurückhaltung** — Effekte wirken weil der Rest ruhig ist.
 
 ### Section-Auswahl
 
