@@ -1,33 +1,40 @@
 /* ============================================
-   DESIGN PROFIL — Pro Kundenprojekt anpassen
+   DESIGN — Pro Kundenprojekt anpassen
 
-   Die Build-Route in AgencyOS setzt diese Werte
-   automatisch basierend auf der Profil-Auswahl
-   im Dashboard. Kann auch manuell geändert werden.
+   Claude setzt fonts (kuratiertes Pairing aus profiles.ts) und
+   colors (freie Hex-Werte passend zur Marke) pro Kunde.
+   Spacing, Radius etc. werden in globals.css als Tokens definiert
+   und können dort pro Kunde überschrieben werden.
    ============================================ */
 
-import { fontPairings, colorWorlds, spacingPresets, borderRadiusPresets, iconStyles } from '../design/profiles';
-import type { LayoutArchetypeId } from '../design/profiles';
+import { fontPairings } from '../design/profiles';
 
 export const design = {
   /** Font-Pairing: craft | clarity | refined | modern | elegant | literary | startup | narrative | neutral | therapeutic | bold | friendly */
   fonts: fontPairings.modern,
 
-  /** Farbwelt: midnight | cleanSlate | terra | forest | graphite | ivory | ... */
-  colors: colorWorlds.cleanSlate,
+  /** Farben — freie Hex-Werte pro Marke. Default neutral, Claude überschreibt pro Kunde. */
+  colors: {
+    background: '#fafaf9',
+    foreground: '#1a1a1a',
+    mutedForeground: '#71717a',
+    primary: '#2563eb',
+    accent: '#1d4ed8',
+    muted: '#f1f0ee',
+    card: '#ffffff',
+    border: '#e4e4e4',
+    input: '#ffffff',
+    ring: '#2563eb',
+    destructive: '#dc2626',
+    success: '#16a34a',
+    isDark: false,
+  },
 
-  /** Spacing: breathe | balanced | dense */
-  spacing: spacingPresets.balanced,
-
-  /** Border-Radius: sharp | subtle | soft | round */
-  borderRadius: borderRadiusPresets.soft,
-
-  /** Icon-Stil: filledBox | ring | naked */
-  iconStyle: iconStyles.ring,
-
-  /** Layout-Archetyp: immersive | editorial | cardBased | minimalStatement */
-  layout: 'immersive' as LayoutArchetypeId,
-
-  /** Kachel-Stil */
-  cardStyle: 'primary' as const,
+  /** Spacing-Tokens als CSS-Werte — Claude justiert pro Kunde */
+  spacing: {
+    sectionPadding: '5rem',
+    elementGap: '1.5rem',
+    borderRadius: '0.5rem',
+    containerMaxWidth: '1280px',
+  },
 };

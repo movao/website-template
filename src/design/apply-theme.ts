@@ -1,18 +1,39 @@
 /* ============================================
    THEME APPLICATION
-   Liest das aktive Design-Profil und generiert
+   Liest die Design-Konfiguration und generiert
    CSS Custom Properties für :root
    ============================================ */
 
-import type { FontPairingId, ColorWorldId, SpacingPresetId, BorderRadiusPresetId } from './profiles';
-import { fontPairings, colorWorlds, spacingPresets, borderRadiusPresets } from './profiles';
+import type { FontPairing } from './profiles';
 import { extractFontName, generateFontFaceCSS } from './font-registry';
 
+interface DesignColors {
+  background: string;
+  foreground: string;
+  mutedForeground: string;
+  primary: string;
+  accent: string;
+  muted: string;
+  card: string;
+  border: string;
+  input: string;
+  ring: string;
+  destructive: string;
+  success: string;
+  isDark: boolean;
+}
+
+interface DesignSpacing {
+  sectionPadding: string;
+  elementGap: string;
+  borderRadius: string;
+  containerMaxWidth: string;
+}
+
 interface DesignConfig {
-  fonts: (typeof fontPairings)[FontPairingId];
-  colors: (typeof colorWorlds)[ColorWorldId];
-  spacing: (typeof spacingPresets)[SpacingPresetId];
-  borderRadius?: (typeof borderRadiusPresets)[BorderRadiusPresetId];
+  fonts: FontPairing;
+  colors: DesignColors;
+  spacing: DesignSpacing;
 }
 
 /** Hex zu space-separated RGB konvertieren (für Tailwind Opacity-Modifier) */
@@ -25,7 +46,6 @@ function hexToRgb(hex: string): string {
 export function generateThemeCSS(config: DesignConfig): string {
   const { fonts, colors, spacing } = config;
 
-  // Alle Farb-Tokens als Hex UND als RGB (für Tailwind /opacity Syntax)
   const colorTokens = {
     background: colors.background,
     foreground: colors.foreground,
@@ -45,7 +65,6 @@ export function generateThemeCSS(config: DesignConfig): string {
     .map(([key, hex]) => `  --color-${key}: ${hex};\n  --color-${key}-rgb: ${hexToRgb(hex)};`)
     .join('\n');
 
-  // Nur die aktiven Fonts laden
   const headingFont = extractFontName(fonts.heading);
   const bodyFont = extractFontName(fonts.body);
   const fontFaceCSS = generateFontFaceCSS([headingFont, bodyFont]);
@@ -66,7 +85,7 @@ ${colorCSS}
   /* Spacing & Form */
   --spacing-section: ${spacing.sectionPadding};
   --spacing-gap: ${spacing.elementGap};
-  --radius: ${config.borderRadius?.value ?? spacing.borderRadius};
+  --radius: ${spacing.borderRadius};
   --container-max-width: ${spacing.containerMaxWidth};
 }`;
 }

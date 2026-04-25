@@ -1,20 +1,21 @@
 import IconOrEmoji from './IconOrEmoji';
-import { design } from '@/config/design';
 import { cn } from '@/lib/utils';
+
+type IconStyle = 'filledBox' | 'ring' | 'naked';
 
 interface IconWrapperProps {
   icon: string;
   size?: number;
   className?: string;
+  style?: IconStyle;
 }
 
 export default function IconWrapper({
   icon,
   size = 24,
   className = '',
+  style = 'ring',
 }: IconWrapperProps) {
-  const style = (design.iconStyle?.id || 'filledBox') as string;
-
   if (style === 'filledBox') {
     return (
       <span className={cn(
