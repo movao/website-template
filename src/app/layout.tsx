@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { siteConfig } from '../config';
 import { design } from '../config/design';
 import { generateThemeCSS } from '../design/apply-theme';
@@ -53,6 +54,7 @@ export default function RootLayout({
         <ConsentManager />
         <TrackingScripts />
         <ScrollReveal />
+        <SpeedInsights />
       </body>
     </html>
   );
