@@ -1,10 +1,6 @@
 # Website Template
 
-Universelles Template für Kundenwebsites. Pro Kunde anpassen: `config.ts`, `config/design.ts`, `config/tracking.ts`, `app/page.tsx`.
-
-## Dokumentation
-- **`specs/usage.md`** — Section-Varianten, Props, Design-System
-- **`specs/refinements.md`** — Gestaltungsmöglichkeiten und Ideen
+Slim Template für Kundenwebsites. Claude baut pro Kunde alle Sections from scratch in `src/components/sections/`. Pro Kunde anpassen: `config.ts`, `config/design.ts`, `config/tracking.ts`, `app/page.tsx` (komplett neu schreiben mit den gebauten Sections).
 
 ## Skills (`.claude/skills/`)
 - **`impeccable`** — Production-grade Frontend-Design (Paul Bakaus). Auto-loaded für Design-Tasks.

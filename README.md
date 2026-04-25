@@ -18,4 +18,4 @@ npm run dev
 
 ## Sections
 
-16 Section-Typen in `src/sections/` — Hero, Features, Services, About, Stats, Process, CTA, Team, Testimonials, Blog, FAQ, OpeningHours, Contact, Map, Gallery, Partners.
+Slim Template ohne vorgefertigte Sections. Claude Code baut pro Kunde alle Sections from scratch in `src/components/sections/`. Siehe `CLAUDE.md` für die Regeln.
