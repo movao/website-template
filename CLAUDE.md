@@ -6,6 +6,11 @@ Universelles Template für Kundenwebsites. Pro Kunde anpassen: `config.ts`, `con
 - **`specs/usage.md`** — Section-Varianten, Props, Design-System
 - **`specs/refinements.md`** — Gestaltungsmöglichkeiten und Ideen
 
+## Skills (`.claude/skills/`)
+- **`impeccable`** — Production-grade Frontend-Design (Paul Bakaus). Auto-loaded für Design-Tasks.
+- **`tailwind-rules`** — Tailwind-Patterns + Performance-Guardrails. Auto-loaded für CSS/Layout.
+- **`anti-slop`** — Verbotene AI-Tells (Phrasen, Namen, Glows, Defaults). Auto-loaded für Content/UI-Generation.
+
 ## Regeln
 
 ### Farben — nur Token-Klassen
